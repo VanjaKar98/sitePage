@@ -165,12 +165,14 @@
     height: 40px;
     @include abstracts.flexbox-layout($justify: space-between, $align: center);
     gap: 5px;
+
     input {
       padding-left: 15px;
       height: 40px;
       border: none;
       background-color: abstracts.$color-white;
-      flex: 1;
+      flex: 1 1 auto;
+      min-width: 0;
     }
   }
 
@@ -276,6 +278,7 @@
 
     &__section--contact {
       max-width: none;
+      min-width: 0px;
       width: 100%;
       border-bottom: 1px solid abstracts.$color-grey;
       padding-bottom: 20px;
