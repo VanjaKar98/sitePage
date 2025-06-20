@@ -379,7 +379,7 @@ a.footer__logo img {
   height: 40px;
   border: none;
   background-color: #fff;
-  flex: 1 1 auto;
+  flex: 1;
   min-width: 0;
 }
 .footer__info--bottom {
