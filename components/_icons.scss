@@ -1,0 +1,55 @@
+@use "../abstracts";
+
+span {
+  display: block;
+  width: 30px;
+  height: 30px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+a.footer__logo {
+  display: block;
+  width: auto;
+  height: 100%;
+
+  img {
+    display: block;
+    width: auto;
+    height: 100%;
+  }
+}
+
+.footer__subscribe-item {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: abstracts.$color-white;
+  @include abstracts.flexbox-layout($justify: center, $align: center);
+
+  img {
+    width: 10px;
+    height: 10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// .footer__subscribe-item {
+//   display: block;
+//   width: 30px;
+//   height: 30px;
+
+//   img {
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     color: green;
+//   }
+// }

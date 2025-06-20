@@ -1,0 +1,109 @@
+@use "../abstracts";
+@use "../base";
+@use "../components";
+
+.header {
+  max-width: 1024px;
+  width: 80%;
+
+  @include abstracts.flexbox-layout(
+    $direction: row,
+    $justify: space-between,
+    $align: center
+  );
+
+  &__logo {
+    width: fit-content;
+    height: 80px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__nav {
+    color: abstracts.$color-white;
+    height: 80px;
+    width: 600px;
+    @include abstracts.flexbox-layout(
+      $direction: row,
+      $justify: space-between,
+      $align: center
+    );
+
+    &-main {
+      color: abstracts.$color-grey;
+      width: 350px;
+      font-size: 1rem;
+      @include abstracts.flexbox-layout(
+        $direction: row,
+        $justify: space-between,
+        $align: center
+      );
+
+      & > li {
+        position: relative;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      & > li::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: abstracts.$color-green;
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      & > li:hover::after {
+        opacity: 1;
+      }
+
+      & > li.active::after {
+        opacity: 1;
+      }
+    }
+
+    &-btn {
+      width: 100px;
+      @include abstracts.flexbox-layout(
+        $direction: row,
+        $justify: center,
+        $align: center
+      );
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .header {
+    max-width: none;
+    width: 100%;
+  }
+
+  .header__nav-main {
+    display: none;
+  }
+
+  .header__nav {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .header__nav-btn {
+    display: none;
+  }
+
+  .header__nav-hambtn {
+    @include abstracts.flexbox-layout;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

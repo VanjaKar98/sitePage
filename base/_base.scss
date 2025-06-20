@@ -1,0 +1,50 @@
+@use "../abstracts";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  position: relative;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+ul,
+li,
+a,
+h1,
+p,
+input,
+button {
+  all: unset;
+}
+address {
+  font-style: normal;
+}
+
+.header-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: abstracts.$color-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  @extend .header-container;
+  padding-top: 60px;
+  height: 450px;
+}
+
+@media (max-width: 800px) {
+  .footer-container {
+    height: auto;
+  }
+}

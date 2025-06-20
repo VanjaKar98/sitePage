@@ -1,0 +1,15 @@
+{
+  "name": "ispit_html_css_9_6_2025",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass scss/style.scss css/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.89.2"
+  }
+}

@@ -1,0 +1,48 @@
+@mixin flexbox-layout($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid-layout(
+  $columnNum: 1,
+  $columnSize: 1fr,
+  $rowNum: 1,
+  $rowSize: 1fr,
+  $gap: 10px,
+  $justContent: center,
+  $alignContent: center
+) {
+  display: grid;
+  grid-template-columns: repeat($columnNum, $columnSize);
+  grid-template-rows: repeat($rowNum, $rowSize);
+  gap: $gap;
+  justify-content: $justContent;
+  align-content: $alignContent;
+}
+
+@mixin button-style(
+  $width,
+  $height,
+  $color,
+  $bckgColor,
+  $border,
+  $bordRadius,
+  $cursor
+) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $width;
+  height: $height;
+  color: $color;
+  background-color: $bckgColor;
+  border: $border;
+  border-radius: $bordRadius;
+}
+
+@mixin grid-column-row-span($gridColumn, $gridRow) {
+  grid-column: #{$gridColumn};
+  grid-row: #{gridRow};
+}

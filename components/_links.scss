@@ -1,0 +1,20 @@
+@use "../abstracts";
+
+.header__nav-btn {
+  border: 1px solid abstracts.$color-white;
+  padding: 12px;
+  cursor: pointer;
+
+  @include abstracts.flexbox-layout(
+    $direction: row,
+    $justify: center,
+    $align: center
+  );
+  transition: all 1s ease;
+
+  &:hover {
+    color: abstracts.$color-black;
+    background-color: abstracts.$color-green;
+    border: 1px solid abstracts.$color-green;
+  }
+}

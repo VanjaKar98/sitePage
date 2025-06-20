@@ -1,0 +1,327 @@
+@use "../abstracts";
+@use "../base";
+@use "../components";
+
+.footer {
+  max-width: 1024px;
+  width: 80%;
+  height: 100%;
+
+  @include abstracts.flexbox-layout(
+    $direction: column,
+    $justify: space-between,
+    $align: center
+  );
+
+  &__top {
+    @include abstracts.flexbox-layout(
+      $direction: row,
+      $justify: space-between,
+      $align: center
+    );
+    width: 100%;
+    height: 320px;
+  }
+
+  &__bottom {
+    align-self: flex-start;
+    width: 100%;
+    height: 50px;
+    color: abstracts.$color-grey;
+  }
+
+  &__socials {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid abstracts.$color-grey;
+    @include abstracts.flexbox-layout(
+      $direction: row,
+      $justify: flex-start,
+      $align: center
+    );
+
+    gap: 20px;
+
+    &-item {
+      a {
+        text-decoration: underline;
+        transition: color 1s ease;
+        &:hover {
+          color: abstracts.$color-green;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__section--logo {
+    height: 100%;
+    max-width: 25%;
+    @include abstracts.flexbox-layout(
+      $direction: column,
+      $justify: flex-start,
+      $align: flex-start
+    );
+    gap: 25px;
+
+    .footer__logo {
+      height: 80px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    p {
+      color: abstracts.$color-grey;
+    }
+    h3 {
+      margin: 0;
+      color: abstracts.$color-white;
+    }
+    a {
+      color: abstracts.$color-white;
+      img {
+        color: abstracts.$color-white;
+      }
+    }
+  }
+
+  &__subscribe {
+    width: 110px;
+    @include abstracts.flexbox-layout($justify: space-between, $align: center);
+  }
+
+  &__section--links {
+    height: 100%;
+    max-width: 30%;
+    @include abstracts.flexbox-layout(
+      $direction: column,
+      $justify: flex-start,
+      $align: flex-start
+    );
+    gap: 40px;
+
+    h3 {
+      margin: 0;
+      color: abstracts.$color-white;
+    }
+
+    ul {
+      height: 50%;
+      color: abstracts.$color-grey;
+      @include abstracts.flexbox-layout(
+        $direction: column,
+        $justify: flex-start,
+        $align: flex-start
+      );
+
+      gap: 20px;
+
+      li {
+        transition: color 1s ease;
+        cursor: pointer;
+
+        &:hover {
+          color: abstracts.$color-green;
+        }
+
+        .active {
+          color: abstracts.$color-green;
+        }
+      }
+    }
+  }
+
+  &__section--contact {
+    height: 100%;
+    min-width: 350px;
+
+    @include abstracts.flexbox-layout(
+      $direction: column,
+      $justify: flex-start,
+      $align: flex-start
+    );
+
+    h3 {
+      margin: 0;
+      color: abstracts.$color-white;
+    }
+  }
+
+  &__info--top {
+    height: 30%;
+    width: 100%;
+
+    @include abstracts.flexbox-layout(
+      $direction: column,
+      $justify: flex-start,
+      $align: flex-start
+    );
+    gap: 10px;
+  }
+
+  &__form {
+    width: 100%;
+    height: 40px;
+    @include abstracts.flexbox-layout($justify: space-between, $align: center);
+    gap: 5px;
+    input {
+      padding-left: 15px;
+      height: 40px;
+      border: none;
+      background-color: abstracts.$color-white;
+      flex: 1;
+    }
+  }
+
+  &__info--bottom {
+    width: 100%;
+    height: 70%;
+    @include abstracts.flexbox-layout(
+      $justify: space-between,
+      $align: flex-start
+    );
+
+    address,
+    a {
+      color: abstracts.$color-grey;
+    }
+
+    .contact-link {
+      text-decoration: underline;
+      transition: color 1s ease;
+
+      &:hover {
+        color: abstracts.$color-green;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__address {
+    max-width: 180px;
+  }
+
+  &__reach {
+    @include abstracts.flexbox-layout(
+      $direction: column,
+      $justify: flex-start,
+      $align: flex-start
+    );
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .footer {
+    max-width: none;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  // .header__nav-main {
+  //   display: none;
+  // }
+
+  // .header__nav {
+  //   width: fit-content;
+  //   height: fit-content;
+  // }
+
+  // .header__nav-btn {
+  //   display: none;
+  // }
+
+  // .header__nav-hambtn {
+  //   @include abstracts.flexbox-layout;
+  //   &:hover {
+  //     cursor: pointer;
+  //   }
+  // }
+}
+
+@media (max-width: 800px) {
+  .footer {
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &__top {
+      @include abstracts.flexbox-layout(
+        $direction: column,
+        $justify: space-between,
+        $align: flex-start
+      );
+
+      gap: 30px;
+      width: 100%;
+      height: auto;
+    }
+
+    &__section--logo {
+      max-width: none;
+      width: 100%;
+      border-bottom: 1px solid abstracts.$color-grey;
+      padding-bottom: 10px;
+    }
+
+    &__section--links {
+      max-width: none;
+      width: 100%;
+      border-bottom: 1px solid abstracts.$color-grey;
+      padding-bottom: 10px;
+      gap: 15px;
+    }
+
+    &__section--contact {
+      max-width: none;
+      width: 100%;
+      border-bottom: 1px solid abstracts.$color-grey;
+      padding-bottom: 20px;
+      gap: 15px;
+    }
+
+    &__form {
+      gap: 0px;
+    }
+
+    &__info--bottom {
+      @include abstracts.flexbox-layout(
+        $direction: column,
+        $justify: flex-start,
+        $align: flex-start
+      );
+      gap: 15px;
+    }
+
+    &__address {
+      max-width: 100%;
+    }
+
+    &__reach {
+      @include abstracts.flexbox-layout(
+        $direction: row,
+        $justify: flex-start,
+        $align: flex-start
+      );
+      gap: 40px;
+    }
+
+    &__bottom {
+      height: auto;
+    }
+
+    &__socials {
+      border-top: none;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      @include abstracts.flexbox-layout(
+        $direction: column,
+        $justify: flex-start,
+        $align: flex-start
+      );
+      gap: 20px;
+    }
+  }
+}
