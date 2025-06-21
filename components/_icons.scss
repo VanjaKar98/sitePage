@@ -1,6 +1,6 @@
 @use "../abstracts";
 
-span {
+span.hamburger-icon {
   display: block;
   width: 30px;
   height: 30px;
@@ -40,16 +40,3 @@ a.footer__logo {
     cursor: pointer;
   }
 }
-
-// .footer__subscribe-item {
-//   display: block;
-//   width: 30px;
-//   height: 30px;
-
-//   img {
-//     display: block;
-//     width: 100%;
-//     height: 100%;
-//     color: green;
-//   }
-// }

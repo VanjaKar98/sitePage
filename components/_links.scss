@@ -18,3 +18,44 @@
     border: 1px solid abstracts.$color-green;
   }
 }
+
+.banner__btn {
+  border: 1px solid abstracts.$color-green;
+  padding: 15px 30px;
+  color: abstracts.$color-blue;
+  background-color: abstracts.$color-green;
+  font-weight: 600;
+  cursor: pointer;
+
+  @include abstracts.flexbox-layout(
+    $direction: row,
+    $justify: center,
+    $align: center
+  );
+  transition: all 1s ease;
+
+  &:hover {
+    color: abstracts.$color-green;
+    background-color: abstracts.$color-blue;
+  }
+}
+
+.article__btn {
+  border: 2px solid abstracts.$color-pale-grey;
+  padding: 15px;
+  cursor: pointer;
+
+  @include abstracts.flexbox-layout(
+    $direction: row,
+    $justify: center,
+    $align: center
+  );
+  gap: 5px;
+
+  color: abstracts.$color-blue;
+  font-weight: 600;
+
+  svg {
+    color: abstracts.$color-blue;
+  }
+}

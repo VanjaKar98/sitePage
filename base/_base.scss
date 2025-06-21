@@ -23,6 +23,11 @@ input,
 button {
   all: unset;
 }
+
+h2 {
+  margin: 0;
+}
+
 address {
   font-style: normal;
 }
@@ -47,4 +52,15 @@ address {
   .footer-container {
     height: auto;
   }
+}
+
+.banner-container {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  @extend .header-container;
+}
+
+.article-container {
+  @extend .header-container;
+  background-color: abstracts.$color-light-blue;
 }

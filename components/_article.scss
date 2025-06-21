@@ -1,0 +1,63 @@
+@use "../abstracts";
+
+.article {
+  padding: 60px;
+  max-width: 300px;
+  height: 450px;
+
+  background-color: abstracts.$color-white;
+  @include abstracts.flexbox-layout(
+    $direction: column,
+    $justify: flex-start,
+    $align: flex-start
+  );
+  gap: 30px;
+
+  transition: all 1s ease;
+
+  .article__btn {
+    transition: all 1s ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: abstracts.$color-blue;
+
+    h3 {
+      color: abstracts.$color-white;
+    }
+
+    p {
+      color: abstracts.$color-grey;
+    }
+
+    .article__btn {
+      background-color: abstracts.$color-green;
+      border-color: abstracts.$color-green;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    color: abstracts.$color-blue;
+    font-size: 22px;
+  }
+
+  p {
+    color: abstracts.$color-pale-grey;
+  }
+}
+
+// <article class="article">
+//               <span
+//                 ><img
+//                   src="https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e16f22db56b5a9122d93f2_Business%20Website%20Audit.svg"
+//                   alt="/"
+//               /></span>
+//               <h3>Business Website Audit</h3>
+//               <p>
+//                 Assess your website&rsquo;s performance and provide improvement
+//                 recommendations.
+//               </p>
+//               <a href=""></a>
+//             </article>
