@@ -40,3 +40,25 @@ a.footer__logo {
     cursor: pointer;
   }
 }
+
+.article__icon {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  display: block;
+
+  &--default,
+  &--hover {
+    transition: opacity 1s ease;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--hover {
+    opacity: 0;
+  }
+}

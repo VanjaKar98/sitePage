@@ -1,9 +1,11 @@
 @use "../abstracts";
 
 .header__nav-btn {
+  width: 100px;
   border: 1px solid abstracts.$color-white;
   padding: 12px;
   cursor: pointer;
+  font-weight: 600;
 
   @include abstracts.flexbox-layout(
     $direction: row,
@@ -17,6 +19,11 @@
     background-color: abstracts.$color-green;
     border: 1px solid abstracts.$color-green;
   }
+}
+
+.hamburger-menu__nav-btn {
+  @extend .header__nav-btn;
+  color: abstracts.$color-white;
 }
 
 .banner__btn {

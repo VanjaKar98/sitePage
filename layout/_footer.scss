@@ -232,26 +232,6 @@
     padding-left: 10px;
     padding-right: 10px;
   }
-
-  // .header__nav-main {
-  //   display: none;
-  // }
-
-  // .header__nav {
-  //   width: fit-content;
-  //   height: fit-content;
-  // }
-
-  // .header__nav-btn {
-  //   display: none;
-  // }
-
-  // .header__nav-hambtn {
-  //   @include abstracts.flexbox-layout;
-  //   &:hover {
-  //     cursor: pointer;
-  //   }
-  // }
 }
 
 @media (max-width: 800px) {
@@ -315,11 +295,16 @@
 
     &__reach {
       @include abstracts.flexbox-layout(
-        $direction: row,
+        $direction: column,
         $justify: flex-start,
         $align: flex-start
       );
-      gap: 40px;
+      gap: 15px;
+
+      &--phone,
+      &--mail {
+        gap: 10px;
+      }
     }
 
     &__bottom {

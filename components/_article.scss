@@ -1,10 +1,10 @@
 @use "../abstracts";
 
 .article {
-  padding: 60px;
-  max-width: 300px;
-  height: 450px;
-
+  position: relative;
+  padding: 50px;
+  width: 320px;
+  height: 440px;
   background-color: abstracts.$color-white;
   @include abstracts.flexbox-layout(
     $direction: column,
@@ -16,6 +16,9 @@
   transition: all 1s ease;
 
   .article__btn {
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
     transition: all 1s ease;
   }
 
@@ -35,6 +38,13 @@
       background-color: abstracts.$color-green;
       border-color: abstracts.$color-green;
     }
+
+    .article__icon--default {
+      opacity: 0;
+    }
+    .article__icon--hover {
+      opacity: 1;
+    }
   }
 
   h3 {
@@ -47,17 +57,3 @@
     color: abstracts.$color-pale-grey;
   }
 }
-
-// <article class="article">
-//               <span
-//                 ><img
-//                   src="https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e16f22db56b5a9122d93f2_Business%20Website%20Audit.svg"
-//                   alt="/"
-//               /></span>
-//               <h3>Business Website Audit</h3>
-//               <p>
-//                 Assess your website&rsquo;s performance and provide improvement
-//                 recommendations.
-//               </p>
-//               <a href=""></a>
-//             </article>
