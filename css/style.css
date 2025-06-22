@@ -62,8 +62,8 @@ address {
   right: 0;
   z-index: -1;
   width: 100vw;
-  min-height: 1000px;
-  padding-top: 80px;
+  min-height: 2000px;
+  padding-top: 120px;
   background-color: #171d2f;
   display: flex;
   flex-direction: row;
@@ -348,7 +348,9 @@ a.footer__logo img {
 
 @media (max-width: 800px) {
   .hamburger-menu .menu__item::after {
-    width: 350px;
+    width: 320px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 .header {

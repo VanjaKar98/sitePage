@@ -54,7 +54,9 @@
   .hamburger-menu {
     .menu__item {
       &::after {
-        width: 350px;
+        width: 320px;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
