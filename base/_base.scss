@@ -61,6 +61,11 @@ address {
   background-color: abstracts.$color-light-blue;
 }
 
+// .article-container {
+//   @extend .article-container;
+//   background-color: abstracts.$color-white;
+// }
+
 .menu-container {
   transform: translateY(-100%);
   transition: transform 0.3s ease-in-out;
