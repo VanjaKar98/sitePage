@@ -93,7 +93,6 @@
 
   &__section--links {
     height: 100%;
-    max-width: 30%;
     @include abstracts.flexbox-layout(
       $direction: column,
       $justify: flex-start,
@@ -242,10 +241,11 @@
 
     &__top {
       @include abstracts.flexbox-layout(
-        $direction: column,
+        $direction: row,
         $justify: space-between,
         $align: flex-start
       );
+      flex-wrap: wrap;
 
       gap: 30px;
       width: 100%;
@@ -253,14 +253,130 @@
     }
 
     &__section--logo {
+      position: relative;
+      flex-basis: 50%;
+      padding-bottom: 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 400%;
+        background-color: abstracts.$color-grey;
+        bottom: -10px;
+        left: 0;
+        z-index: 10;
+      }
+    }
+
+    &__section--links {
+      @include abstracts.flexbox-layout(
+        $direction: column,
+        $justify: space-between,
+        $align: flex-end
+      );
+      flex-basis: 50%;
+      margin-top: 35px;
+
+      ul {
+        @include abstracts.flexbox-layout(
+          $direction: column,
+          $justify: flex-start,
+          $align: flex-end
+        );
+      }
+    }
+
+    &__section--contact {
+      width: 100%;
+      border-bottom: 1px solid abstracts.$color-grey;
+      padding-bottom: 20px;
+      gap: 15px;
+    }
+
+    &__form {
+      gap: 0px;
+    }
+
+    &__info--bottom {
+      @include abstracts.flexbox-layout(
+        $direction: column,
+        $justify: flex-start,
+        $align: flex-start
+      );
+      gap: 15px;
+    }
+
+    &__address {
+      max-width: 100%;
+    }
+
+    &__reach {
+      @include abstracts.flexbox-layout(
+        $direction: row,
+        $justify: flex-start,
+        $align: flex-start
+      );
+      gap: 35px;
+
+      &--phone,
+      &--mail {
+        @include abstracts.flexbox-layout(
+          $direction: column,
+          $justify: flex-start,
+          $align: flex-start
+        );
+        gap: 10px;
+      }
+    }
+
+    &__bottom {
+      height: auto;
+    }
+
+    &__socials {
+      border-top: none;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      @include abstracts.flexbox-layout(
+        $direction: column,
+        $justify: flex-start,
+        $align: flex-start
+      );
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    &__top {
+      @include abstracts.flexbox-layout(
+        $direction: column,
+        $justify: space-between,
+        $align: flex-start
+      );
+      flex-wrap: nowrap;
+    }
+
+    &__section--logo {
       max-width: none;
       width: 100%;
       border-bottom: 1px solid abstracts.$color-grey;
       padding-bottom: 10px;
+
+      &::after {
+        display: none;
+      }
     }
 
     &__section--links {
-      max-width: none;
+      @include abstracts.flexbox-layout(
+        $direction: column,
+        $justify: space-between,
+        $align: flex-start
+      );
+      margin-top: 0;
       width: 100%;
       border-bottom: 1px solid abstracts.$color-grey;
       padding-bottom: 10px;
@@ -295,14 +411,20 @@
 
     &__reach {
       @include abstracts.flexbox-layout(
-        $direction: column,
+        $direction: row,
         $justify: flex-start,
         $align: flex-start
       );
-      gap: 15px;
+      gap: 35px;
 
       &--phone,
       &--mail {
+        @include abstracts.flexbox-layout(
+          $direction: column,
+          $justify: flex-start,
+          $align: flex-start
+        );
+
         gap: 10px;
       }
     }
