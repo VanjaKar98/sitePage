@@ -28,6 +28,10 @@ h2 {
   margin: 0;
 }
 
+h3 {
+  margin: 0;
+}
+
 address {
   font-style: normal;
 }
@@ -36,7 +40,6 @@ address {
   position: relative;
   width: 100%;
   height: auto;
-  background-color: abstracts.$color-blue;
   @include abstracts.flexbox-layout(
     $direction: row,
     $justify: center,
@@ -58,13 +61,13 @@ address {
 
 .article-container {
   @extend .header-container;
-  background-color: abstracts.$color-light-blue;
 }
 
-// .article-container {
-//   @extend .article-container;
-//   background-color: abstracts.$color-white;
-// }
+.counter-container {
+  @extend .article-container;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 .menu-container {
   transform: translateY(-100%);

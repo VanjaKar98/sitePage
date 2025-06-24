@@ -42,13 +42,13 @@
     .article__icon--default {
       opacity: 0;
     }
+
     .article__icon--hover {
       opacity: 1;
     }
   }
 
   h3 {
-    margin: 0;
     color: abstracts.$color-blue;
     font-size: 22px;
   }

@@ -56,7 +56,7 @@
 
   &__section--logo {
     height: 100%;
-    max-width: 25%;
+    max-width: 30%;
     @include abstracts.flexbox-layout(
       $direction: column,
       $justify: flex-start,
@@ -222,6 +222,10 @@
       @extend .footer__reach;
     }
   }
+}
+
+.footer--blue {
+  background-color: abstracts.$color-blue;
 }
 
 @media (max-width: 1100px) {
